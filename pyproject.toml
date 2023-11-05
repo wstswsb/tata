@@ -9,6 +9,8 @@ packages = [{include = "adm_simple_settings_checker"}]
 [tool.poetry.dependencies]
 python = "^3.12"
 pyyaml = "^6.0.1"
+typer = "^0.9.0"
+rich = "^13.6.0"
 
 
 [tool.poetry.group.dev.dependencies]

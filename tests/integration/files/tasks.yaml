@@ -1,0 +1,3 @@
+tasks:
+  - task: "check_hostname"
+    target_hostname: "test-hostname"
