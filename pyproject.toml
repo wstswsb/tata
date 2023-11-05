@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "adm-simple-settings-checker"
+version = "0.1.0"
+description = ""
+authors = ["Sviatoslav Bobryshev <wstswsb@gmail.com>"]
+readme = "README.md"
+packages = [{include = "adm_simple_settings_checker"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
