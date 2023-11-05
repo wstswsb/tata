@@ -286,7 +286,7 @@ testing = ["fields", "hunter", "process-tests", "pytest-xdist", "six", "virtuale
 name = "pyyaml"
 version = "6.0.1"
 description = "YAML parser and emitter for Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 files = [
@@ -383,4 +383,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "8dba185b9c8dcef71dac6ee84c3e02160a4d942df9fec9ba50ec4d712b2e9942"
+content-hash = "53279443ecf251c1aabda6c2e42da20d02380ae575f16e54977471acfde24c56"
