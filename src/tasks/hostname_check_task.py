@@ -4,7 +4,7 @@ from .task_result import TaskResult
 
 
 class HostnameCheckTask:
-    def check(self, target: str) -> TaskResult:
+    async def check(self, target: str) -> TaskResult:
         errors = []
         hostname = platform.node()
         if hostname != target:
