@@ -134,6 +134,18 @@ testing = ["covdefaults (>=2.3)", "coverage (>=7.3.2)", "diff-cover (>=8)", "pyt
 typing = ["typing-extensions (>=4.8)"]
 
 [[package]]
+name = "icmplib"
+version = "3.0.4"
+description = "Easily forge ICMP packets and make your own ping and traceroute."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "icmplib-3.0.4-py3-none-any.whl", hash = "sha256:336b75c6c23c5ce99ddec33f718fab09661f6ad698e35b6f1fc7cc0ecf809398"},
+    {file = "icmplib-3.0.4.tar.gz", hash = "sha256:57868f2cdb011418c0e1d5586b16d1fabd206569fe9652654c27b6b2d6a316de"},
+]
+
+[[package]]
 name = "identify"
 version = "2.5.31"
 description = "File identification library for Python"
@@ -503,4 +515,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "5af5ffb8832217c8dcd871f326acfef13c7909ad2744baba833aa6d104037bca"
+content-hash = "7b14f25fdec351a165ea8321c055bbf5f08560d316928da293a154755429e441"
