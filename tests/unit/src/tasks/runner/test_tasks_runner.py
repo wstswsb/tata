@@ -23,6 +23,6 @@ class TestRunner:
 
         sut = Runner(task_mocks)
 
-        results = await sut.run()
+        results = [await coro for coro in sut.run()]
 
         assert results == [TaskResult("Task-1", []), TaskResult("Task-2", ["1"])]
