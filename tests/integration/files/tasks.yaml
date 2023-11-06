@@ -1,3 +1,6 @@
 tasks:
   - task: "check_hostname"
     target_hostname: "test-hostname"
+
+  - task: "check_ping"
+    target_ip: "127.0.0.1"
