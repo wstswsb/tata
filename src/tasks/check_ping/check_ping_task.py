@@ -8,7 +8,7 @@ class CheckPingTask:
         self.target_ip = target_ip
 
     async def check(self) -> TaskResult:
-        host = await async_ping(self.target_ip)
+        host = await async_ping(self.target_ip, count=3, privileged=False)
         errors = []
         if not host.is_alive:
             errors.append(f"Cannot ping host with ip={self.target_ip}")
