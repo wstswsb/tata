@@ -1,6 +1,6 @@
 from typer.testing import CliRunner
 
-from src.cli.app import app
+from py_tata.cli.app import app
 
 
 class TestApp:

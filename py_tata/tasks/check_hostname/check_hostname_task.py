@@ -1,6 +1,6 @@
 import platform
 
-from src.tasks.task_result import TaskResult
+from py_tata.tasks.task_result import TaskResult
 
 
 class CheckHostnameTask:

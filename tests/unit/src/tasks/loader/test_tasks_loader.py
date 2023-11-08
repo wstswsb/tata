@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from src.tasks.loader import InvalidTasksDescription, TasksLoader
-from src.tasks.loader.exceptions import InvalidTaskName
+from py_tata.tasks.loader import InvalidTasksDescription, TasksLoader
+from py_tata.tasks.loader.exceptions import InvalidTaskName
 
 
 @dataclasses.dataclass(frozen=True, slots=True)

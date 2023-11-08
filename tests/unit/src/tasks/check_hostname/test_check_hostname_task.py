@@ -2,8 +2,8 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from src.tasks import TaskResult
-from src.tasks.check_hostname import CheckHostnameTask
+from py_tata.tasks import TaskResult
+from py_tata.tasks.check_hostname import CheckHostnameTask
 
 
 @pytest.mark.asyncio
@@ -12,7 +12,7 @@ class TestCheckHostnameTask:
         self.target_hostname = "test-target"
         self.sut = CheckHostnameTask(self.target_hostname)
 
-    @patch("src.tasks.check_hostname.check_hostname_task.platform.node")
+    @patch("py_tata.tasks.check_hostname.check_hostname_task.platform.node")
     async def test_check_fail(self, platform_node_mock: Mock):
         current_hostname = f"not-{self.sut.target_hostname}"
         platform_node_mock.return_value = current_hostname
@@ -27,7 +27,7 @@ class TestCheckHostnameTask:
             ],
         )
 
-    @patch("src.tasks.check_hostname.check_hostname_task.platform.node")
+    @patch("py_tata.tasks.check_hostname.check_hostname_task.platform.node")
     async def test_check_success(self, platform_node_mock: Mock):
         current_hostname = self.sut.target_hostname
         platform_node_mock.return_value = current_hostname

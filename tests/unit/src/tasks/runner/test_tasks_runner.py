@@ -2,8 +2,8 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from src.tasks import TaskResult
-from src.tasks.runner import Runner
+from py_tata.tasks import TaskResult
+from py_tata.tasks.runner import Runner
 
 
 @pytest.mark.asyncio

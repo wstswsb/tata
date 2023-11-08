@@ -2,7 +2,7 @@ import asyncio
 from collections.abc import Coroutine, Iterable
 from typing import Protocol
 
-from src.tasks import TaskResult
+from py_tata.tasks import TaskResult
 
 
 class TaskProtocol(Protocol):

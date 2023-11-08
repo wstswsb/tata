@@ -1,6 +1,6 @@
 from icmplib import async_ping
 
-from src.tasks import TaskResult
+from py_tata.tasks import TaskResult
 
 
 class CheckPingTask:

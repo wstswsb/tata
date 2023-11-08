@@ -12,10 +12,10 @@ from rich.progress import (
 )
 from typer import Typer
 
-from src.tasks.check_hostname import CheckHostnameTask
-from src.tasks.check_ping import CheckPingTask
-from src.tasks.loader import TasksLoader
-from src.tasks.runner import Runner
+from py_tata.tasks.check_hostname import CheckHostnameTask
+from py_tata.tasks.check_ping import CheckPingTask
+from py_tata.tasks.loader import TasksLoader
+from py_tata.tasks.runner import Runner
 
 app = Typer()
 

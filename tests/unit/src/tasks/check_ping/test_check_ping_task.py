@@ -3,13 +3,13 @@ from unittest.mock import AsyncMock, Mock, patch
 import pytest
 from icmplib import Host, async_ping
 
-from src.tasks import TaskResult
-from src.tasks.check_ping import CheckPingTask
+from py_tata.tasks import TaskResult
+from py_tata.tasks.check_ping import CheckPingTask
 
 
 @pytest.mark.asyncio
 class TestCheckPingTask:
-    @patch("src.tasks.check_ping.check_ping_task.async_ping", spec=async_ping)
+    @patch("py_tata.tasks.check_ping.check_ping_task.async_ping", spec=async_ping)
     async def test_ping_accessible(self, async_ping_mock: AsyncMock):
         host_mock = Mock(spec=Host)
         host_mock.is_alive = True
@@ -30,7 +30,7 @@ class TestCheckPingTask:
             privileged=False,
         )
 
-    @patch("src.tasks.check_ping.check_ping_task.async_ping", spec=async_ping)
+    @patch("py_tata.tasks.check_ping.check_ping_task.async_ping", spec=async_ping)
     async def test_ping_not_accessible(self, async_ping_mock: AsyncMock):
         host_mock = Mock(spec=Host)
         host_mock.is_alive = False

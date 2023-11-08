@@ -1,10 +1,11 @@
 [tool.poetry]
-name = "tata"
+name = "py_tata"
 version = "0.1.0"
 description = ""
 authors = ["Sviatoslav Bobryshev <wstswsb@gmail.com>"]
-readme = "README.md"
-packages = [{include = "tata"}]
+
+[tool.poetry.scripts]
+tata = "py_tata.cli.app:app"
 
 [tool.poetry.dependencies]
 python = "^3.10.11"
