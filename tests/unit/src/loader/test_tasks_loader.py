@@ -1,10 +1,11 @@
 import dataclasses
 from pathlib import Path
 
+import pydantic
 import pytest
 
-from py_tata.tasks.loader import InvalidTasksDescription, TasksLoader
-from py_tata.tasks.loader.exceptions import InvalidTaskName
+from py_tata.builder import TaskBuilder
+from py_tata.loader import InvalidTaskName, InvalidTasksDescription, TasksLoader
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
@@ -12,9 +13,20 @@ class TaskMock:
     target: str
 
 
+class TaskValidationModelMock(pydantic.BaseModel):
+    target: str
+
+
 class TestTasksLoader:
     def setup_method(self):
-        self.sut = TasksLoader(task_name_to_class={"task_mock": TaskMock})
+        self.sut = TasksLoader(
+            task_name_to_builder={
+                "task_mock": TaskBuilder(
+                    validation_model=TaskValidationModelMock,
+                    task_class=TaskMock,
+                )
+            }
+        )
         self.yaml_path = Path("tests/unit/files/test_tasks_loader.yaml")
 
     def teardown_method(self):

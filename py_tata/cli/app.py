@@ -12,10 +12,11 @@ from rich.progress import (
 )
 from typer import Typer
 
-from py_tata.tasks.check_hostname import CheckHostnameTask
-from py_tata.tasks.check_ping import CheckPingTask
-from py_tata.tasks.loader import TasksLoader
-from py_tata.tasks.runner import Runner
+from py_tata.builder import TaskBuilder
+from py_tata.loader import TasksLoader
+from py_tata.runner import Runner
+from py_tata.tasks.check_hostname import CheckHostnameIn, CheckHostnameTask
+from py_tata.tasks.check_ping import CheckPingIn, CheckPingTask
 
 app = Typer()
 
@@ -35,9 +36,15 @@ def main(tasks_path: Path):
 async def async_main(tasks_path: Path):
     rich_print(f"[cyan]Collecting tasks...[/]")
     loader = TasksLoader(
-        task_name_to_class={
-            "check_hostname": CheckHostnameTask,
-            "check_ping": CheckPingTask,
+        task_name_to_builder={
+            "check_hostname": TaskBuilder(
+                validation_model=CheckHostnameIn,
+                task_class=CheckHostnameTask,
+            ),
+            "check_ping": TaskBuilder(
+                validation_model=CheckPingIn,
+                task_class=CheckPingTask,
+            ),
         }
     )
     tasks = loader.load(tasks_path)

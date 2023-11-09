@@ -1,1 +1,2 @@
-from .check_ping_task import CheckPingTask
+from .task import CheckPingTask
+from .validation_model import CheckPingIn
