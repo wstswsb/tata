@@ -21,6 +21,18 @@ Tata supports the following tasks:
       - task: check_ping
         target_ip: "127.0.0.1"
    ```
+3. **linux_check_ipv4_forwarding**
+   ```yaml
+   tasks:
+     - task: linux_check_ipv4_forwarding
+       enabled: no
+   ```
+4. **linux_check_ipv6_forwarding**
+   ```yaml
+   tasks:
+     - task: linux_check_ipv6_forwarding
+       enabled: no
+   ```
 
 ## Task Configuration
 
@@ -33,9 +45,14 @@ tasks:
 
   - task: check_ping
     target_ip: "127.0.0.1"
-
   - task: check_ping
     target_ip: "ya.ru"
+
+  - task: linux_check_ipv4_forwarding
+    enabled: no
+  - task: linux_check_ipv6_forwarding
+    enabled: no
+
 ```
 
 ## Installation

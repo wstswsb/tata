@@ -9,3 +9,5 @@ tasks:
 
   - task: linux_check_ipv4_forwarding
     enabled: no
+  - task: linux_check_ipv6_forwarding
+    enabled: no
