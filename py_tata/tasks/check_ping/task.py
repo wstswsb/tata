@@ -4,7 +4,7 @@ from py_tata.tasks import TaskResult
 
 
 class CheckPingTask:
-    def __init__(self, target_ip: str):
+    def __init__(self, target_ip: str, **kwargs):
         self.target_ip = target_ip
 
     async def check(self) -> TaskResult:

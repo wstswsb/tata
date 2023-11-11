@@ -1,2 +1,2 @@
 from .exceptions import InvalidTasksDescription
-from .tasks_loader import TasksLoader
+from .yaml_loader import YamlLoader
