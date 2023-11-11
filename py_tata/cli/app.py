@@ -13,10 +13,11 @@ from rich.progress import (
     TimeElapsedColumn,
 )
 from typer import Typer
-from typing_extensions import Annotated
 
 import py_tata.tasks.check_hostname as check_hostname
 import py_tata.tasks.check_ping as check_ping
+import py_tata.tasks.linux_check_ip_forwarding.ipv4 as linux_check_ipv4_forwarding
+import py_tata.tasks.linux_check_ip_forwarding.ipv6 as linux_check_ipv6_forwarding
 from py_tata.core.builder.task_builder import TaskBuilder
 from py_tata.core.loader import YamlLoader
 from py_tata.core.loader.exceptions import InvalidTasksDescription
@@ -26,6 +27,8 @@ from py_tata.tasks.validation_model import TasksContainer
 _task_name_to_builder: dict[str, TaskBuilder] = {
     **check_hostname.TASK_NAME_TO_BUILDER,
     **check_ping.TASK_NAME_TO_BUILDER,
+    **linux_check_ipv4_forwarding.TASK_NAME_TO_BUILDER,
+    **linux_check_ipv6_forwarding.TASK_NAME_TO_BUILDER,
 }
 
 app = Typer()

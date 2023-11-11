@@ -6,3 +6,8 @@ tasks:
     target_ip: "127.0.0.1"
   - task: check_ping
     target_ip: "192.168.168.168"
+
+  - task: linux_check_ipv4_forwarding
+    enabled: no
+  - task: linux_check_ipv6_forwarding
+    enabled: no

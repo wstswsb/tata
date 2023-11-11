@@ -5,9 +5,20 @@ from pydantic import BaseModel, field_validator
 
 from py_tata.tasks.check_hostname.validation_model import CheckHostnameIn
 from py_tata.tasks.check_ping.validation_model import CheckPingIn
+from py_tata.tasks.linux_check_ip_forwarding.ipv4 import LinuxCheckIPv4ForwardingIn
+from py_tata.tasks.linux_check_ip_forwarding.ipv6 import LinuxCheckIPv6ForwardingIn
 
-_unique_types = (CheckHostnameIn,)
-_validation_tasks_types = CheckHostnameIn | CheckPingIn
+_unique_types = (
+    CheckHostnameIn,
+    LinuxCheckIPv4ForwardingIn,
+    LinuxCheckIPv6ForwardingIn,
+)
+_validation_tasks_types = (
+    CheckHostnameIn
+    | CheckPingIn
+    | LinuxCheckIPv4ForwardingIn
+    | LinuxCheckIPv6ForwardingIn
+)
 
 
 class TasksContainer(BaseModel):

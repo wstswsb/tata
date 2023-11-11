@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "py_tata"
-version = "0.1.1"
+version = "0.1.5"
+readme = "readme.md"
 description = ""
 authors = ["Sviatoslav Bobryshev <wstswsb@gmail.com>"]
 
