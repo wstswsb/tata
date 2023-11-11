@@ -10,5 +10,7 @@ class TestApp:
     def test_call(self):
         result = self.sut.invoke(
             app,
-            ["--tasks_path=./tests/integration/files/tasks.yaml"],
+            ["tests/integration/files/tasks.yaml"],
         )
+        assert result.exit_code == 0
+        print(result.stdout, flush=True)

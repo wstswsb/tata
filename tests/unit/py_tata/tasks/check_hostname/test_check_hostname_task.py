@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch
 import pytest
 
 from py_tata.tasks import TaskResult
-from py_tata.tasks.check_hostname import CheckHostnameTask
+from py_tata.tasks.check_hostname.task import CheckHostnameTask
 
 
 @pytest.mark.asyncio

@@ -4,7 +4,7 @@ from py_tata.tasks.task_result import TaskResult
 
 
 class CheckHostnameTask:
-    def __init__(self, target_hostname: str):
+    def __init__(self, target_hostname: str, **kwargs):
         self.target_hostname = target_hostname
 
     async def check(self) -> TaskResult:
