@@ -61,7 +61,7 @@ tasks:
 
 ```bash
 pipx install py_tata
-py_tata ./tasks.yaml
+pytata ./tasks.yaml
 ```
 
 ### Alternative method: pip
